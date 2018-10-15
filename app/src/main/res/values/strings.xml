@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CoolDictionary</string>
+    <string name="searchText"></string>
+    <string name="searchBtn">Search</string>
+    <string name="search_cool_words_hint">Search cool words</string>
+    <string name="playTriviaBtn">Play Trivia</string>
+    <string name="viewFavoriteBtn">View Favorited Words</string>
+    <string name="historyBtn">History</string>
 </resources>
