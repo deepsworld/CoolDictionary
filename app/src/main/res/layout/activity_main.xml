@@ -26,7 +26,7 @@
         app:layout_constraintHorizontal_bias="0.076"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.097"
+        app:layout_constraintVertical_bias="0.044"
         tools:targetApi="o" />
 
     <Button
@@ -45,19 +45,7 @@
         app:layout_constraintHorizontal_bias="0.972"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.098" />
-
-    <android.support.v7.widget.RecyclerView
-        android:id="@+id/languageRecycler"
-        android:layout_width="294dp"
-        android:layout_height="36dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="8dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.217" />
+        app:layout_constraintVertical_bias="0.04" />
 
     <Button
         android:id="@+id/playTriviaBtn"
@@ -70,35 +58,80 @@
         android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/playTriviaBtn"
+        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.388" />
+        app:layout_constraintVertical_bias="0.45" />
+
+    <Button
+        android:id="@+id/wotdBtn"
+        android:layout_width="282dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="120dp"
+        android:text="@string/wotdayBtn"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.327" />
 
     <Button
         android:id="@+id/viewFavoriteBtn"
         android:layout_width="282dp"
         android:layout_height="78dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
         android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
         android:layout_marginBottom="8dp"
+        android:gravity="center"
         android:text="@string/viewFavoriteBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.597" />
+        app:layout_constraintVertical_bias="0.661" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/historyBtn"
         android:layout_width="282dp"
         android:layout_height="78dp"
-        android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
+        android:gravity="center"
         android:text="@string/historyBtn"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.817" />
+        app:layout_constraintVertical_bias="0.875" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="377dp"
+        android:layout_height="13dp"
+        android:layout_marginBottom="500dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="322dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="80dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:text="TextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
 </android.support.constraint.ConstraintLayout>

@@ -6,4 +6,5 @@
     <string name="playTriviaBtn">Play Trivia</string>
     <string name="viewFavoriteBtn">View Favorited Words</string>
     <string name="historyBtn">History</string>
+    <string name="wotdayBtn">World of the Day</string>
 </resources>
