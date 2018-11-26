@@ -5,12 +5,17 @@ import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.JsonObjectRequest
 import kotlinx.android.synthetic.main.activity_main.*
 import java.net.URL
 import com.androidnetworking.AndroidNetworking
 import com.androidnetworking.error.ANError
 
 import com.androidnetworking.interfaces.ParsedRequestListener
+import com.google.gson.Gson
+import com.google.gson.JsonObject
 import java.util.*
 
 class MainActivity : AppCompatActivity() {
@@ -21,37 +26,32 @@ class MainActivity : AppCompatActivity() {
 
         searchBtn.setOnClickListener { searchWord() }
 
-        AndroidNetworking.initialize(this)
-        AndroidNetworking.enableLogging()
 
     }
-
-
     fun searchWord() {
 
         var word = editText.text
         val API_URL = "https://googledictionaryapi.eu-gb.mybluemix.net/?define="
-        val url = URL("${API_URL}${word}&lang=en")
-
-        AndroidNetworking.get(url.toString())
-                .build()
-                .getAsObject(ApiResult :: class.java, object: ParsedRequestListener<ApiResult> {
-                   override fun onResponse(response: ApiResult?) {
-                       if(response == null){
-                           Log.d("manohman", "Null bro")
-                       }
-                       if(response != null) {
-                           Log.d("manohman", url.toString())
-                           Log.d("manohman", response.toString())
-                        }
-                    }
-
-                    override fun onError(anError: ANError?) {
-                        Toast.makeText(this@MainActivity, "Failed to download user list", Toast.LENGTH_SHORT).show()
-                    }
-                })
+        val url = "${API_URL}${word}&lang=en"
+        var wordResponse: String = ""
 
 
+        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
+                Response.Listener { response ->
+                    wordResponse = response.toString()
+                    println(wordResponse)
+                    val word_data = Gson().fromJson<Word>(wordResponse, Word::class.java )
+                    println(word_data)
+                    textView.text = word_data.toString()
+                },
+                Response.ErrorListener { error ->
+                    // Error handling here.
+                    Toast.makeText(this@MainActivity, "Failed to get the word", Toast.LENGTH_SHORT).show()
+                }
+        )
+
+        // Access the RequestQueue through the singleton class.
+        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
 
     }
 
