@@ -7,4 +7,19 @@
     <string name="viewFavoriteBtn">View Favorited Words</string>
     <string name="historyBtn">History</string>
     <string name="wotdayBtn">World of the Day</string>
+    <string name="wordView" />
+    <string name="word_title"></string>
+    <string name="phoneticView">Phonetic :  </string>
+    <string name="wordContentView" />
+    <string name="wordTypeView" />
+    <string name="useNone"></string>
+    <string name="useAdjective">Adjective : \n\n</string>
+    <string name="useVerb">Verb : \n\n</string>
+    <string name="useNoun">Adverb : \n\n</string>
+    <string name="useAdverb">Noun : \n\n</string>
+    <string name="usePronoun">Pronoun : \n\n</string>
+    <string name="useExclamation">Exclamation : \n\n</string>
+    <string name="useAbbreviation">Abbreviation : \n\n</string>
+    <string name="useConjunction">Conjunction : \n\n</string>
+    <string name="useDeterminer">Determiner : \n\n</string>
 </resources>

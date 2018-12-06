@@ -1,6 +1,9 @@
 package edu.towson.cosc431.Patel.CoolDictionary
 
 
+import android.app.Activity
+import android.content.ComponentName
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -24,35 +27,45 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        searchBtn.setOnClickListener { searchWord() }
+        // Search button listener.
+        searchBtn.setOnClickListener {
+            launchWordDisplay() }
+
+        // Word of the day textview listener.
+
+        // History button listener.
+
+        // Trivia question button listener.
+
+        // Favorite word button listener.
 
 
     }
-    fun searchWord() {
 
-        var word = editText.text
-        val API_URL = "https://googledictionaryapi.eu-gb.mybluemix.net/?define="
-        val url = "${API_URL}${word}&lang=en"
-        var wordResponse: String = ""
+    // Method to launch the word display activity.
+    private fun launchWordDisplay() {
+        // initialize the intent
+        val intent = Intent()
+
+        // specify the intent to open new activity.
+        intent.component = ComponentName(this, WordDisplay :: class.java)
+
+        // get the word from the editText field.
+        val word = editText.text.toString()
+
+        when{
+            word.isEmpty() -> Toast.makeText(this@MainActivity, "Enter a cool word", Toast.LENGTH_SHORT).show()
+            else -> {
+                intent.putExtra(MSG_TEXT, word )
+                startActivity(intent)
+            }
+        }
+
+    }
 
 
-        val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
-                Response.Listener { response ->
-                    wordResponse = response.toString()
-                    println(wordResponse)
-                    val word_data = Gson().fromJson<Word>(wordResponse, Word::class.java )
-                    println(word_data)
-                    textView.text = word_data.toString()
-                },
-                Response.ErrorListener { error ->
-                    // Error handling here.
-                    Toast.makeText(this@MainActivity, "Failed to get the word", Toast.LENGTH_SHORT).show()
-                }
-        )
-
-        // Access the RequestQueue through the singleton class.
-        MySingleton.getInstance(this).addToRequestQueue(jsonObjectRequest)
-
+    companion object {
+        val MSG_TEXT = "man oh man"
     }
 
 }

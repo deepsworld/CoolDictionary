@@ -23,36 +23,46 @@ data class Meaning(
         val adverb: List<Adverb>,
         val conjunction: List<Conjunction>,
         val determiner: List<Determiner>,
-        val pronoun: List<Pronoun>
+        val pronoun: List<Pronoun>,
+        val abbreviation: List<Abbreviation>
+)
 
+data class Helper(
+        val wordType: List<Adjective>
+)
+
+data class Abbreviation(
+        val definition: String,
+        val example: String,
+        val synonyms: List<String>
 )
 
 data class Pronoun(
-        val defination: String,
+        val definition: String,
         val example: String,
         val synonyms: List<String>
 )
 
 data class Determiner(
-        val defination: String,
+        val definition: String,
         val example: String,
         val synonyms: List<String>
 )
 
 data class Conjunction(
-        val defination: String,
+        val definition: String,
         val example: String,
         val synonyms: List<String>
 )
 
 data class Adverb(
-        val defination: String,
+        val definition: String,
         val example: String,
         val synonyms: List<String>
 )
 
 data class Adjective(
-        val defination: String,
+        val definition: String,
         val example: String,
         val synonyms: List<String>
 )
