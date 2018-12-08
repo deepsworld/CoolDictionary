@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.text.SpannableStringBuilder
 import android.text.style.ForegroundColorSpan
 import android.util.Log
+import android.view.View
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
@@ -14,31 +15,76 @@ import kotlinx.android.synthetic.main.activity_word_display.*
 
 class WordDisplay : AppCompatActivity() {
 
+    // define database
+    lateinit var db: IDatabase
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_word_display)
+
+        // get the word from intent as string
+        val word_main = intent.extras?.get(MainActivity.MSG_TEXT) as String
+
+        // initialize the database
+        db = WordDatabase(this)
+
         searchWord()
+
+        favoriteSwitch.setOnCheckedChangeListener { buttonView, isChecked ->
+            when(isChecked){
+                true -> {
+                    addToFavorites(word_main)
+                    Toast.makeText(this@WordDisplay, "Word added to favorites", Toast.LENGTH_SHORT).show()
+                }
+                false ->{
+                    removeFromFavorites(word_main)
+                    Toast.makeText(this@WordDisplay, "Word removed from favorites", Toast.LENGTH_SHORT).show()
+                }
+            }
+        }
+    }
+
+
+    private fun addToFavorites(word: String){
+        db.updateWord(WordDataClass(word, true))
+
+    }
+
+    private fun removeFromFavorites(word: String){
+        db.updateWord(WordDataClass(word, false))
     }
 
     // Function to get the word from the api in JSON format.
     fun searchWord() {
         // get the word from intent as string
-        val word_main = intent.extras?.get(MainActivity.MSG_TEXT) as String?
+        val word_main = intent.extras?.get(MainActivity.MSG_TEXT) as String
         val word = word_main
-        val API_URL = "https://googledictionaryapi.eu-gb.mybluemix.net/?define="
+
+
+        // add word to history database
+        db.addWord(WordDataClass(word_main,false))
+
+        val API_URL = "https://mydictionaryapi.appspot.com/?define="
         val url = "${API_URL}${word?.trim()}&lang=en"
         word_title.text = word
+
+        progressBar.incrementProgressBy(40)
 
         val jsonObjectRequest = JsonObjectRequest(Request.Method.GET, url, null,
                 Response.Listener { response ->
                     val wordData = Gson().fromJson<Word>(response.toString(), Word::class.java )
+                    progressBar.incrementProgressBy(progressBar.max)
                     showMeaning(wordData)
+                    progressBar.visibility = View.INVISIBLE
                 },
 
                 // if the word cannot be found... handle error here
                 Response.ErrorListener { error ->
                     // Error handling here.
                     Log.d("WordDisplay", error.toString())
+                    progressBar.visibility = View.INVISIBLE
+                    errorMeme.setImageResource(R.drawable.meme1)
+                    errorMeme.visibility = View.VISIBLE
                     Toast.makeText(this@WordDisplay, "We don't do such words", Toast.LENGTH_SHORT).show()
                 }
         )
@@ -48,6 +94,8 @@ class WordDisplay : AppCompatActivity() {
 
     }
 
+
+    // method to organize and display the received data.
     private fun showMeaning(wordData: Word){
         // Phonetic
         when(wordData.phonetic == null){

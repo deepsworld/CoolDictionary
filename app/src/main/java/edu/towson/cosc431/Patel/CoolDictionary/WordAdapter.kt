@@ -7,7 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.word_view.view.*
 
-class WordAdapter(val wordType: List<Adjective>) :  RecyclerView.Adapter<WordViewHolder>(){
+
+class WordAdapter(val wordList: List<WordDataClass>) :  RecyclerView.Adapter<WordViewHolder>(){
 
     lateinit var filterList: List<Word>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
@@ -21,12 +22,13 @@ class WordAdapter(val wordType: List<Adjective>) :  RecyclerView.Adapter<WordVie
 
 
     override fun getItemCount(): Int {
-        return wordType.size
+        return wordList.size
     }
 
     override fun onBindViewHolder(holder: WordViewHolder, position: Int) {
-
-        holder.itemView.textView2.text = wordType.toString()
+        //1. get the task at the position
+        val word_string = wordList.get(position)
+        holder.itemView.word_card.text = word_string.word
     }
 
 

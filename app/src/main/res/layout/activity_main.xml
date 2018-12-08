@@ -4,48 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/editText"
-        android:layout_width="264dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:autofillHints=""
-        android:ems="10"
-        android:hint="@string/search_cool_words_hint"
-        android:inputType="textPersonName"
-        android:text="@string/searchText"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.076"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.044"
-        tools:targetApi="o" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="101dp"
+        android:background="@color/colorPrimary"
+        android:gravity="bottom|center_horizontal|center|end"
+        android:orientation="horizontal">
 
-    <Button
-        android:id="@+id/searchBtn"
-        android:layout_width="82dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="8dp"
-        android:text="@string/searchBtn"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.972"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.04" />
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="264dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:autofillHints=""
+            android:ems="10"
+            android:hint="@string/search_cool_words_hint"
+            android:inputType="textPersonName"
+            android:text="@string/searchText"
+            android:textColor="@android:color/white"
+            android:textColorHint="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.076"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.044"
+            tools:targetApi="o" />
+
+        <Button
+            android:id="@+id/searchBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginLeft="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_marginRight="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="@string/searchBtn"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.972"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.04" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/playTriviaBtn"
@@ -66,20 +77,6 @@
         app:layout_constraintVertical_bias="0.45" />
 
     <Button
-        android:id="@+id/wotdBtn"
-        android:layout_width="282dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginBottom="120dp"
-        android:text="@string/wotdayBtn"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.327" />
-
-    <Button
         android:id="@+id/viewFavoriteBtn"
         android:layout_width="282dp"
         android:layout_height="78dp"
@@ -98,6 +95,20 @@
         app:layout_constraintVertical_bias="0.661" />
 
     <Button
+        android:id="@+id/wotdBtn"
+        android:layout_width="282dp"
+        android:layout_height="78dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="120dp"
+        android:text="@string/wotdayBtn"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.327" />
+
+    <Button
         android:id="@+id/historyBtn"
         android:layout_width="282dp"
         android:layout_height="78dp"
@@ -109,15 +120,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.875" />
-
-    <ProgressBar
-        android:id="@+id/progressBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="377dp"
-        android:layout_height="13dp"
-        android:layout_marginBottom="500dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

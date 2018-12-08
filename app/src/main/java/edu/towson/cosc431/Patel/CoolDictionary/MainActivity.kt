@@ -34,12 +34,39 @@ class MainActivity : AppCompatActivity() {
         // Word of the day textview listener.
 
         // History button listener.
+        historyBtn.setOnClickListener {
+            launchHistoryDisplay()
+        }
 
         // Trivia question button listener.
 
+
         // Favorite word button listener.
+        viewFavoriteBtn.setOnClickListener {
+            launchFavoriteDisplay()
+        }
 
 
+    }
+
+    private fun launchFavoriteDisplay() {
+        // initialize the intent
+        val intent = Intent()
+
+        // specify the intent to open new activity.
+        intent.component = ComponentName(this, WordFavorite :: class.java)
+
+        startActivity(intent)
+    }
+
+    private fun launchHistoryDisplay() {
+        // initialize the intent
+        val intent = Intent()
+
+        // specify the intent to open new activity.
+        intent.component = ComponentName(this, WordHistory :: class.java)
+
+        startActivity(intent)
     }
 
     // Method to launch the word display activity.

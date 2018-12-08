@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:orientation="vertical"
@@ -7,15 +8,33 @@
     android:isScrollContainer="true"
     tools:context=".WordDisplay">
 
-    <TextView
-        android:id="@+id/word_title"
-        android:layout_width="match_parent"
-        android:layout_height="131dp"
-        android:background="@color/colorPrimary"
-        android:gravity="center"
-        android:text="@string/word_title"
-        android:textColor="@android:color/white"
-        android:textSize="50sp" />
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <TextView
+            android:id="@+id/word_title"
+            android:layout_width="match_parent"
+            android:layout_height="131dp"
+            android:background="@color/colorPrimary"
+            android:gravity="center"
+            android:text="@string/word_title"
+            android:textColor="@android:color/white"
+            android:textSize="50sp" />
+
+        <Switch
+            android:id="@+id/favoriteSwitch"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="26dp"
+            android:layout_marginRight="26dp"
+            android:text="@string/favoriteSwitch"
+            android:textColor="@android:color/white" />
+    </RelativeLayout>
 
     <TextView
         android:id="@+id/phoneticView"
@@ -46,6 +65,20 @@
                 android:layout_height="wrap_content"
                 android:text="@string/wordContentView"
                 android:textSize="22sp" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/errorMeme"
+                android:layout_width="match_parent"
+                android:layout_height="290dp"
+                android:contentDescription="@string/errorMeme"
+                android:visibility="invisible"
+                tools:srcCompat="@drawable/meme1" />
         </LinearLayout>
     </ScrollView>
 

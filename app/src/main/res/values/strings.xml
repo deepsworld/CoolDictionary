@@ -22,4 +22,9 @@
     <string name="useAbbreviation">Abbreviation : \n\n</string>
     <string name="useConjunction">Conjunction : \n\n</string>
     <string name="useDeterminer">Determiner : \n\n</string>
+    <string name="favoriteSwitch">Favorite</string>
+    <string name="errorMeme">ErrorMeme</string>
+    <string name="word_card" />
+    <string name="historyView">Recent Words</string>
+    <string name="favoriteView">Favorite Words</string>
 </resources>

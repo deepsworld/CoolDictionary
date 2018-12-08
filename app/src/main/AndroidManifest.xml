@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="edu.towson.cosc431.Patel.CoolDictionary">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -20,7 +21,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".WordDisplay" />
-        <activity android:name=".word_view"></activity>
+        <activity android:name=".WordHistory" />
+        <activity android:name=".WordFavorite"></activity>
     </application>
 
 </manifest>
