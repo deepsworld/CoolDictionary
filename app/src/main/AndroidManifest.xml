@@ -22,7 +22,9 @@
         </activity>
         <activity android:name=".WordDisplay" />
         <activity android:name=".WordHistory" />
-        <activity android:name=".WordFavorite"></activity>
+        <activity android:name=".WordFavorite" />
+        <activity android:name=".WordOTDDisplay" />
+        <activity android:name=".TriviaActivity"></activity>
     </application>
 
 </manifest>

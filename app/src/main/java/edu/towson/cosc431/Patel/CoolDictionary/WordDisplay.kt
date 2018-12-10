@@ -110,21 +110,21 @@ class WordDisplay : AppCompatActivity() {
                 while(i < wordData.meaning.adjective.size){
 
                     if(wordData.meaning.adjective[i].definition != null){
-                        wordContentView.append("Defination: ")
+                        wordContentView.append("-Defination: ")
                         wordContentView.append(wordData.meaning.adjective[i].definition)
                         wordContentView.append("\n")
                     }
 
 
                     if(wordData.meaning.adjective[i].example != null){
-                        wordContentView.append("Example: ")
+                        wordContentView.append("-Example: ")
                         wordContentView.append(wordData.meaning.adjective[i].example)
                         wordContentView.append("\n")
                     }
 
 
                     if(wordData.meaning.adjective[i].synonyms != null){
-                        wordContentView.append("Synonyms: ")
+                        wordContentView.append("-Synonyms: ")
                         wordContentView.append(wordData.meaning.adjective[i].synonyms.toString())
 
                     }
@@ -143,21 +143,21 @@ class WordDisplay : AppCompatActivity() {
             while(i < wordData.meaning.adverb.size){
 
                 if(wordData.meaning.adverb[i].definition != null){
-                    wordContentView.append("Defination: ")
+                    wordContentView.append("-Defination: ")
                     wordContentView.append(wordData.meaning.adverb[i].definition)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.adverb[i].example != null){
-                    wordContentView.append("Example: ")
+                    wordContentView.append("-Example: ")
                     wordContentView.append(wordData.meaning.adverb[i].example)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.adverb[i].synonyms != null){
-                    wordContentView.append("Synonyms: ")
+                    wordContentView.append("-Synonyms: ")
                     wordContentView.append(wordData.meaning.adverb[i].synonyms.toString())
 
                 }
@@ -174,21 +174,21 @@ class WordDisplay : AppCompatActivity() {
             while(i < wordData.meaning.verb.size){
 
                 if(wordData.meaning.verb[i].definition != null){
-                    wordContentView.append("Defination: ")
+                    wordContentView.append("-Defination: ")
                     wordContentView.append(wordData.meaning.verb[i].definition)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.verb[i].example != null){
-                    wordContentView.append("Example: ")
+                    wordContentView.append("-Example: ")
                     wordContentView.append(wordData.meaning.verb[i].example)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.verb[i].synonyms != null){
-                    wordContentView.append("Synonyms: ")
+                    wordContentView.append("-Synonyms: ")
                     wordContentView.append(wordData.meaning.verb[i].synonyms.toString())
 
                 }
@@ -205,21 +205,21 @@ class WordDisplay : AppCompatActivity() {
             while(i < wordData.meaning.exclamation.size){
 
                 if(wordData.meaning.exclamation[i].definition != null){
-                    wordContentView.append("Defination: ")
+                    wordContentView.append("-Defination: ")
                     wordContentView.append(wordData.meaning.exclamation[i].definition)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.exclamation[i].example != null){
-                    wordContentView.append("Example: ")
+                    wordContentView.append("-Example: ")
                     wordContentView.append(wordData.meaning.exclamation[i].example)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.exclamation[i].synonyms != null){
-                    wordContentView.append("Synonyms: ")
+                    wordContentView.append("-Synonyms: ")
                     wordContentView.append(wordData.meaning.exclamation[i].synonyms.toString())
                 }
 
@@ -235,21 +235,21 @@ class WordDisplay : AppCompatActivity() {
             while(i < wordData.meaning.pronoun.size){
 
                 if(wordData.meaning.pronoun[i].definition != null){
-                    wordContentView.append("Defination: ")
+                    wordContentView.append("-Defination: ")
                     wordContentView.append(wordData.meaning.pronoun[i].definition)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.pronoun[i].example != null){
-                    wordContentView.append("Example: ")
+                    wordContentView.append("-Example: ")
                     wordContentView.append(wordData.meaning.pronoun[i].example)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.pronoun[i].synonyms != null){
-                    wordContentView.append("Synonyms: ")
+                    wordContentView.append("-Synonyms: ")
                     wordContentView.append(wordData.meaning.pronoun[i].synonyms.toString())
                 }
 
@@ -265,21 +265,21 @@ class WordDisplay : AppCompatActivity() {
             while(i < wordData.meaning.noun.size){
 
                 if(wordData.meaning.noun[i].definition != null){
-                    wordContentView.append("Defination: ")
+                    wordContentView.append("-Defination: ")
                     wordContentView.append(wordData.meaning.noun[i].definition)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.noun[i].example != null){
-                    wordContentView.append("Example: ")
+                    wordContentView.append("-Example: ")
                     wordContentView.append(wordData.meaning.noun[i].example)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.noun[i].synonyms != null){
-                    wordContentView.append("Synonyms: ")
+                    wordContentView.append("-Synonyms: ")
                     wordContentView.append(wordData.meaning.noun[i].synonyms.toString())
                 }
 
@@ -295,21 +295,21 @@ class WordDisplay : AppCompatActivity() {
             while(i < wordData.meaning.conjunction.size){
 
                 if(wordData.meaning.conjunction[i].definition != null){
-                    wordContentView.append("Defination: ")
+                    wordContentView.append("-Defination: ")
                     wordContentView.append(wordData.meaning.conjunction[i].definition)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.conjunction[i].example != null){
-                    wordContentView.append("Example: ")
+                    wordContentView.append("-Example: ")
                     wordContentView.append(wordData.meaning.conjunction[i].example)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.conjunction[i].synonyms != null){
-                    wordContentView.append("Synonyms: ")
+                    wordContentView.append("-Synonyms: ")
                     wordContentView.append(wordData.meaning.conjunction[i].synonyms.toString())
                 }
 
@@ -325,21 +325,21 @@ class WordDisplay : AppCompatActivity() {
             while(i < wordData.meaning.determiner.size){
 
                 if(wordData.meaning.determiner[i].definition != null){
-                    wordContentView.append("Defination: ")
+                    wordContentView.append("-Defination: ")
                     wordContentView.append(wordData.meaning.determiner[i].definition)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.determiner[i].example != null){
-                    wordContentView.append("Example: ")
+                    wordContentView.append("-Example: ")
                     wordContentView.append(wordData.meaning.determiner[i].example)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.determiner[i].synonyms != null){
-                    wordContentView.append("Synonyms: ")
+                    wordContentView.append("-Synonyms: ")
                     wordContentView.append(wordData.meaning.determiner[i].synonyms.toString())
                 }
 
@@ -355,21 +355,21 @@ class WordDisplay : AppCompatActivity() {
             while(i < wordData.meaning.abbreviation.size){
 
                 if(wordData.meaning.abbreviation[i].definition != null){
-                    wordContentView.append("Defination: ")
+                    wordContentView.append("-Defination: ")
                     wordContentView.append(wordData.meaning.abbreviation[i].definition)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.abbreviation[i].example != null){
-                    wordContentView.append("Example: ")
+                    wordContentView.append("-Example: ")
                     wordContentView.append(wordData.meaning.abbreviation[i].example)
                     wordContentView.append("\n")
                 }
 
 
                 if(wordData.meaning.abbreviation[i].synonyms != null){
-                    wordContentView.append("Synonyms: ")
+                    wordContentView.append("-Synonyms: ")
                     wordContentView.append(wordData.meaning.abbreviation[i].synonyms.toString())
                 }
                 wordContentView.append("\n")

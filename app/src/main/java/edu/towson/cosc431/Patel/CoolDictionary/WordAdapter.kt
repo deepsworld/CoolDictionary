@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import kotlinx.android.synthetic.main.word_view.view.*
 
 
-class WordAdapter(val wordList: List<WordDataClass>) :  RecyclerView.Adapter<WordViewHolder>(){
+class WordAdapter(val wordList: List<WordDataClass>, val controller: IController) :  RecyclerView.Adapter<WordViewHolder>(){
 
     lateinit var filterList: List<Word>
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): WordViewHolder {
@@ -17,6 +17,12 @@ class WordAdapter(val wordList: List<WordDataClass>) :  RecyclerView.Adapter<Wor
 
         //2. Create a ViewHolder
         val viewHolder =  WordViewHolder(view)
+
+
+        viewHolder.itemView.setOnClickListener {
+            val position = viewHolder.adapterPosition
+            controller.launchWordActivity(wordList[position].word)
+            notifyItemChanged(position)}
         return viewHolder
     }
 
