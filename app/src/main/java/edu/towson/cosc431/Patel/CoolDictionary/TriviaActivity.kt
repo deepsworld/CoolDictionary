@@ -1,7 +1,9 @@
 package edu.towson.cosc431.Patel.CoolDictionary
 
+import android.content.DialogInterface
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
+import android.support.v7.app.AlertDialog
 import android.view.View
 import android.widget.RadioButton
 import kotlinx.android.synthetic.main.activity_trivia.*
@@ -60,7 +62,17 @@ class TriviaActivity : AppCompatActivity() {
 
     }
 
+
     fun onRadioButtonClicked(view: View) {
+
+        val dialogBuilder = AlertDialog.Builder(this)
+        dialogBuilder.setTitle("You are damn right")
+                .setItems(arrayOf("Back"), object: DialogInterface.OnClickListener {
+                    override fun onClick(dialog: DialogInterface?, idx: Int) {
+                        dialog?.dismiss()
+                    }
+
+                })
         if (view is RadioButton) {
             // Is the button now checked?
             val checked = view.isChecked
@@ -70,6 +82,7 @@ class TriviaActivity : AppCompatActivity() {
                 R.id.option1 ->
                     if (option1.text.equals(quesList[randQues].correctAns)) {
                         output.append("   You are damn right")
+                        dialogBuilder.create().show()
                     }
                     else{
                         output.append("   Incorrect")
@@ -79,6 +92,7 @@ class TriviaActivity : AppCompatActivity() {
                 R.id.option2 ->
                     if (option2.text.equals(quesList[randQues].correctAns)) {
                         output.append("   You are damn right")
+                        dialogBuilder.create().show()
                     }
                     else{
                         output.append("   Incorrect")
@@ -87,6 +101,7 @@ class TriviaActivity : AppCompatActivity() {
                 R.id.option3 ->
                     if (option3.text.equals(quesList[randQues].correctAns)) {
                         output.append("   You are damn right")
+                        dialogBuilder.create().show()
                     }
                     else{
                         output.append("   Incorrect")
@@ -95,6 +110,7 @@ class TriviaActivity : AppCompatActivity() {
                 R.id.option4 ->
                     if (option4.text.equals(quesList[randQues].correctAns)) {
                         output.append("   You are damn right")  // Ninjas rule
+                        dialogBuilder.create().show()
                     }
                     else{
                         output.append("   Incorrect")
@@ -103,7 +119,7 @@ class TriviaActivity : AppCompatActivity() {
             }
         }
     }
-    
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_trivia)
