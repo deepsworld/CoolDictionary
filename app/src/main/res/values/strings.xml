@@ -36,7 +36,7 @@
     <string name="option2">Option 2</string>
     <string name="option3">Option 3</string>
     <string name="option4">Option 4</string>
-    <string name="output">Output</string>
+    <string name="output"></string>
     <string name="homeBtn">Home</string>
     <string name="welcome_to_trivia">Welcome to trivia!</string>
     <string name="final_answer">Final Answer?</string>
